@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #8BA1BB;
     font-family: Arial;
@@ -9,7 +13,7 @@ body {
 /* Catégorie            */
 /* -------------------- */
 
-div.categorie {
+.categorie {
     color: white;
     text-align: center;
     margin: 60px 0 -18px 0;
@@ -29,13 +33,12 @@ p.categorie {
 /* Contenu              */
 /* -------------------- */
 
-div.contenu {
+.contenu {
     background-color: white;
     width: 80%;
     max-width: 1000px;
     margin: 0 auto 80px auto;
     padding: 0 30px 30px 30px;
-    box-sizing: border-box;
     border-radius: 12px;
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
 }
@@ -56,12 +59,11 @@ h1 {
 /* Description          */
 /* -------------------- */
 
-div.description {
+.description {
     text-align: center;
 }
 
 p.description {
-    text-align: center;
     max-width: 400px;
     display: inline-block;
     font-size: 14px;
@@ -72,7 +74,7 @@ p.description {
 /* Séparateur           */
 /* -------------------- */
 
-div.separateur {
+.separateur {
     background-color: #6C829D;
     height: 1px;
     width: 100px;
@@ -100,13 +102,13 @@ img.border {
 /* Image + tableau      */
 /* -------------------- */
 
-div.relative {
+.relative {
     position: relative;
 }
 
 
 /* -------------------- */
-/* Tableau               */
+/* Tableau              */
 /* -------------------- */
 
 table.absolute {
@@ -123,6 +125,7 @@ table.absolute td {
     font-size: 14px;
     vertical-align: top;
 }
+
 table.absolute th {
     font-size: 18px;
     vertical-align: bottom;
@@ -131,24 +134,22 @@ table.absolute th {
 
 
 /* -------------------- */
-/* Ingredients + prepa   */
+/* Ingrédients + préparation */
 /* -------------------- */
 
-.colonnes{
+.colonnes {
     display: flex;
     justify-content: space-between;
 }
-div.colonne1 {    
-    width: 45%;    
-    margin-top: 20px;
-}
-div.colonne2 {    
-    width: 45%;    
+
+.colonne1,
+.colonne2 {
+    width: 45%;
     margin-top: 20px;
 }
 
-div.colonne1 h2,
-div.colonne2 h2 {
+.colonne1 h2,
+.colonne2 h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 15px;
@@ -158,13 +159,22 @@ div.colonne2 h2 {
 }
 
 
-div.ingredients p{
+/* -------------------- */
+/* Ingrédients          */
+/* -------------------- */
+
+.ingredients p {
     text-align: center;
     font-size: 14px;
     border: lightgrey solid 1px;
     line-height: 35px;
     margin: 5px;
 }
+
+
+/* -------------------- */
+/* Préparation          */
+/* -------------------- */
 
 table.preparation p.numero {
     background-color: #6C829D;
@@ -177,37 +187,81 @@ table.preparation p.numero {
     padding-top: 5px;
     margin: 0;
     font-weight: bold;
-    box-sizing: border-box;
 }
+
 table.preparation td {
     vertical-align: top;
 }
+
 table.preparation td.preparation_etape {
     font-size: 14px;
     padding-left: 10px;
     padding-bottom: 20px;
 }
+
 table.preparation tr {
     height: 40px;
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
+
 /* -------------------- */
-/* Smartphone            */
+/* Smartphone           */
 /* -------------------- */
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
 
-    div.contenu {
-        width: 100%;
+    .contenu {
+        
+        width: calc(100% - 10px);
+        margin: 0 5px 20px 5px;
         padding: 0 15px 20px 15px;
-        border-radius: 0;
+        border-radius: 12px;
+        box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .colonnes {
+        flex-direction: column;
+    }
+
+    .colonne1,
+    .colonne2 {
+        width: 100%;
     }
 
     table.absolute {
-        font-size: 12px;
-        height: 60px;
+        height: 50px;
     }
 
+    table.absolute td {
+        font-size: 12px;
+       
+    }
+
+    table.absolute th {
+        font-size: 14px;
+
+    }
+
+    .categorie {
+    color: white;
+    text-align: center;
+    margin: 10px 0 -18px 0;
+}
+}
+@media only screen and (min-width: 900px) {
+
+.contenu {
+    
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    
+
+
+}
 }
